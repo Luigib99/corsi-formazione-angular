@@ -1,0 +1,52 @@
+
+<header class="header">
+  SELEZIONA IL DOCENTE DA ELIMINARE!
+</header>
+<div class="pagina container mt-4">
+  <table class="table">
+    <thead class="thead-dark prop">
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">NOME</th>
+        <th scope="col">COGNOME</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="clickable-row" 
+      (click)="selectDocente(docente.id)" 
+      data-bs-toggle="modal" 
+      data-bs-target="#staticBackdrop" 
+      *ngFor="let docente of docenti()">
+        <td class="id">{{ docente.id }}</td>
+        <td>{{ docente.nome }}</td>
+        <td>{{ docente.cognome }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="docenteEliminato" class="alert alert-danger mt-3 p-3">
+  Docente Eliminato!
+</div>
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">ELIMINAZIONE DOCENTE</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Sei sicuro di voler eliminare: {{docenteSelect.id}} {{docenteSelect.nome}} {{docenteSelect.cognome}}?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">NO</button>
+        <button type="button" 
+        class="btn btn-primary" 
+        (click)="deleteDocente(idDocente)"
+        data-bs-dismiss="modal"
+        routerLink="/delete-element/:delete-docente">SI</button>
+      </div>
+    </div>
+  </div>
+</div>

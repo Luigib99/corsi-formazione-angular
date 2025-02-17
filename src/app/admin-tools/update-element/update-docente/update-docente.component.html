@@ -1,0 +1,63 @@
+
+<header class="header">
+  SELEZIONA IL DOCENTE DA MODIFICARE!
+</header>
+<div class="pagina container mt-4">
+  <table class="table">
+    <thead class="thead-dark prop">
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">NOME</th>
+        <th scope="col">COGNOME</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="clickable-row" 
+      (click)="selectDocente(docente.id)" 
+      data-bs-toggle="modal" 
+      data-bs-target="#staticBackdrop" 
+      *ngFor="let docente of docenti()">
+        <td class="id">{{ docente.id }}</td>
+        <td>{{ docente.nome }}</td>
+        <td>{{ docente.cognome }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="docenteModificato" class="alert alert-primary mt-3 p-3">
+  Docente Modificato
+</div>
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">MODIFICA DOCENTE</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form #docenteForm="ngForm">
+          <div class="mb-3">
+            <label for="docenteId" class="form-label">ID {{idDocente}} </label>
+          </div>
+          <div class="mb-3">
+            <label for="docenteNome" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="docenteNome" [(ngModel)]="docenteSelect.nome" name="nome">
+          </div>
+          <div class="mb-3">
+            <label for="docenteCognome" class="form-label">Cognome</label>
+            <input type="text" class="form-control" id="docenteCognome" [(ngModel)]="docenteSelect.cognome" name="cognome">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ANNULLA</button>
+        <button type="button" 
+        class="btn btn-primary" 
+        (click)="updateDocente(idDocente,docenteForm)"
+        data-bs-dismiss="modal">SALVA</button>
+      </div>
+    </div>
+  </div>
+</div>

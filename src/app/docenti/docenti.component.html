@@ -1,0 +1,19 @@
+<header class="header">
+  LISTA DOCENTI
+</header>
+<div class="pagina container mt-4">
+  <table class="table">
+    <thead class="thead-dark prop">
+      <tr>
+        <th scope="col">NOME</th>
+        <th scope="col">COGNOME</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let docente of docenti">
+        <td>{{ docente.nome }}</td>
+        <td>{{ docente.cognome }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,58 @@
+/* Stile per la pagina */
+.pagina {
+  padding: 20px;
+}
+
+/* il titolo */
+.header {
+  text-align: center;
+  padding: 20px;
+  font-size: 2.5rem; /* Usa rem per una dimensione del font più flessibile */
+  font-family: 'Roboto', sans-serif; /* Cambia il font a Roboto */
+  font-weight: bold; /* Rende il font più spesso */
+  color: #ffffff; /* Cambia il colore del testo */
+  background-color: rgb(29, 50, 182); /* Aggiunge uno sfondo chiaro */
+  border-bottom: 2px solid #ddd; /* Aggiunge un bordo inferiore */
+}
+
+/* tabella */
+.table {
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+/* legende e dati */
+.table th, .table td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+/* legende */
+.table th {
+  background-color: rgb(58, 43, 193);
+  color: white;
+  height: 40px;
+  font-family: 'Roboto', sans-serif;
+  border: 2px solid #000000;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: sticky;
+  top: 0;
+}
+
+/* dati */
+.table td{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 200;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  border: 2px solid #000000;
+}
+
+/* id*/
+.id{
+  width: 90px;
+  background-color: rgb(178, 198, 204);
+}
