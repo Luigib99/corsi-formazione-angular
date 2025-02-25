@@ -1,5 +1,5 @@
 import { inject, Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { DocenteModel } from '../model/docente.model';
 
 @Injectable({
@@ -24,6 +24,15 @@ export class DocenteService {
     }
 
     updateDocente( id: number, docente:DocenteModel){
-      return this.http.put<DocenteModel>(`http://localhost:8080/docente/deleteDocente/${id}`, docente);
+      return this.http.put<DocenteModel>(`http://localhost:8080/docente/updateDocente/${id}`, docente);
+    }
+
+    getFilteredDocenti(nome?: string, cognome?: string) {
+      let params = new HttpParams();
+      
+      if (nome) params = params.append('nome', nome);
+      if (cognome) params = params.append('cognome', cognome);
+    
+      return this.http.get<DocenteModel[]>('http://localhost:8080/docenti/filterDocente', { params });
     }
 }

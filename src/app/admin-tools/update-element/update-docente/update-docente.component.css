@@ -1,28 +1,34 @@
-/* Stile per la pagina */
+/* pagina */
 .pagina {
   padding: 20px;
+  margin-bottom:20px ;
+  background-color: #eed3d3;
 }
 
-/* il titolo */
+/* alert docente modificato */
+.alert-floating {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1050;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  width: 500px;
+  max-width: 90%;
+  padding: 1rem;
+}
+
+/* titolo */
 .header {
   text-align: center;
-  padding: 20px;
+  padding: 10px;
   font-size: 2.5rem;
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
   color: #ffffff;
-  background-color: rgb(220, 53, 69);
-  border-bottom: 2px solid #ddd;
-}
-
-.clickable-row {
-  cursor: pointer;
-  transition: transform 0.1s,  background-color 0.1s;
-}
-
-.clickable-row:hover {
-  transform: scale(1.01);
-  background-color: solid red;
+  background-color: rgb(147, 39, 50);
+  border: 1px solid #000000;
 }
 
 /* tabella */
@@ -31,38 +37,76 @@
   border-collapse: collapse;
 }
 
-/* legende e dati */
-.table th, .table td {
-  padding: 12px 15px;
+/* legenda */
+.legenda {
+  padding: 8px 12px;
   text-align: left;
-}
-
-/* legende */
-.table th {
-  background-color: rgb(220, 53, 69);
+  background-color: rgb(147, 39, 50);
   color: white;
-  height: 40px;
+  height: 30px;
   font-family: 'Roboto', sans-serif;
-  border: 2px solid #000000;
+  border: 1px solid #000000;
   font-weight: 700;
   font-size: 1.2rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  position: sticky;
-  top: 0;
+  width: 50%;
 }
 
-/* dati */
-.table td{
-  font-family: 'Roboto', sans-serif;
-  font-weight: 200;
-  font-size: 1.2rem;
-  letter-spacing: 1px;
-  border: 2px solid #000000;
-}
-
-/* id*/
+/* id */
 .id{
-  width: 90px;
-  background-color: rgb(255, 231, 231);
+  background-color: rgb(147, 39, 50);
+  color: white;
+  height: 30px;
+  font-family: 'Roboto', sans-serif;
+  border: 1px solid #000000;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  width: 2%;
+}
+
+/* dato */
+.table td{
+  padding: 8px 12px;
+  text-align: left;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 1 rem;
+  letter-spacing: 1px;
+  border: 1px solid #000000;
+  cursor: pointer;
+}
+
+.table tbody tr:hover td:not(.id) {
+  background-color: rgb(242, 220, 222) !important;
+  color: #000000 !important;
+}
+
+
+/* modal */
+.modal-docente{
+  height: 100px;
+}
+
+.modal-header{
+  background-color: rgb(147, 39, 50);
+  color: white;
+}
+
+.testo-docente{
+  font-size: 1.1rem;
+  font-weight:400;
+  font-family: 'Roboto', sans-serif;
+  color: #000000;
+  margin: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.corsi{
+  font-size: 17px;
+  font-weight: 400;
 }

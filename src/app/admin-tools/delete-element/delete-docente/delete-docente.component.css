@@ -1,28 +1,20 @@
 /* Stile per la pagina */
 .pagina {
   padding: 20px;
+  margin-bottom:20px ;
+  background-color: #eed3d3;
 }
 
 /* il titolo */
 .header {
   text-align: center;
-  padding: 20px;
+  padding: 10px;
   font-size: 2.5rem;
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
   color: #ffffff;
-  background-color: rgb(220, 53, 69);
-  border-bottom: 2px solid #ddd;
-}
-
-.clickable-row {
-  cursor: pointer;
-  transition: transform 0.1s,  background-color 0.1s;
-}
-
-.clickable-row:hover {
-  transform: scale(1.01);
-  background-color: solid red;
+  background-color: rgb(147, 39, 50);
+  border: 1px solid #000000;
 }
 
 /* tabella */
@@ -31,19 +23,23 @@
   border-collapse: collapse;
 }
 
+.id{
+  width: 2%;
+}
+
 /* legende e dati */
 .table th, .table td {
-  padding: 12px 15px;
+  padding: 8px 12px;
   text-align: left;
 }
 
 /* legende */
 .table th {
-  background-color: rgb(220, 53, 69);
+  background-color: rgb(147, 39, 50);
   color: white;
-  height: 40px;
+  height: 30px;
   font-family: 'Roboto', sans-serif;
-  border: 2px solid #000000;
+  border: 1px solid #000000;
   font-weight: 700;
   font-size: 1.2rem;
   text-transform: uppercase;
@@ -55,14 +51,52 @@
 /* dati */
 .table td{
   font-family: 'Roboto', sans-serif;
-  font-weight: 200;
-  font-size: 1.2rem;
+  font-weight: 400;
+  font-size: 1 rem;
   letter-spacing: 1px;
-  border: 2px solid #000000;
+  border: 1px solid #000000;
 }
 
-/* id*/
-.id{
-  width: 90px;
-  background-color: rgb(255, 231, 231);
+/* cerchio info */
+.circle-info{
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  font-weight: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.pulsante-elimina{
+  background-color: solid red;
+}
+
+/* testo info */
+.testo-elimina{
+  font-size: 1rem;
+  font-weight:1000;
+  font-family: 'Roboto', sans-serif;
+  color: #000000;
+}
+
+.modal-docente{
+  height: 100px;
+}
+
+.modal-header{
+  background-color: rgb(147, 39, 50);
+  color: white;
+}
+
+.testo-docente{
+  font-size: 1.1rem;
+  font-weight:400;
+  font-family: 'Roboto', sans-serif;
+  color: #000000;
+  margin: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

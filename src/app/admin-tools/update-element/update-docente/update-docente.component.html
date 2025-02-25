@@ -1,14 +1,18 @@
-
-<header class="header">
-  SELEZIONA IL DOCENTE DA MODIFICARE!
-</header>
+<!-- ALERT DOCENTE MDOIFICATO -->
+<div *ngIf="docenteModificato" class="alert alert-success alert-floating">
+  Docente Modificato
+</div>
+<!-- TABELLA -->
 <div class="pagina container mt-4">
+  <div class="header">
+    <h1>Elenco dei Docenti</h1>
+  </div>
   <table class="table">
     <thead class="thead-dark prop">
       <tr>
-        <th scope="col">id</th>
-        <th scope="col">NOME</th>
-        <th scope="col">COGNOME</th>
+        <th scope="col" class="id">id</th>
+        <th scope="col" class="nome legenda">NOME</th>
+        <th scope="col" class="cognome legenda">COGNOME</th>
       </tr>
     </thead>
     <tbody>
@@ -24,12 +28,8 @@
     </tbody>
   </table>
 </div>
-
-<div *ngIf="docenteModificato" class="alert alert-primary mt-3 p-3">
-  Docente Modificato
-</div>
-
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<!-- MDOAL -->
+<div class="modal fade" id="staticBackdrop">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -39,20 +39,35 @@
       <div class="modal-body">
         <form #docenteForm="ngForm">
           <div class="mb-3">
-            <label for="docenteId" class="form-label">ID {{idDocente}} </label>
+            <label class="form-label">ID {{idDocente}} </label>
           </div>
           <div class="mb-3">
-            <label for="docenteNome" class="form-label">Nome</label>
+            <label for="docenteNome" class="form-label">Nome:</label>
             <input type="text" class="form-control" id="docenteNome" [(ngModel)]="docenteSelect.nome" name="nome">
           </div>
           <div class="mb-3">
-            <label for="docenteCognome" class="form-label">Cognome</label>
+            <label for="docenteCognome" class="form-label">Cognome:</label>
             <input type="text" class="form-control" id="docenteCognome" [(ngModel)]="docenteSelect.cognome" name="cognome">
+          </div>
+          <div>
+            <label for="docenteCorso" class="form-label">Corsi:</label>
+          </div>
+          <div class="mb-3">
+            <button type="button" 
+            class="btn btn-outline-secondary m-1" 
+            *ngFor="let corso of docenteSelect.listaCorsi">{{corso}}
+            </button>
+            <button
+            type="button"
+            class="btn btn-secondary m-1">+</button>
           </div>
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ANNULLA</button>
+        <button type="button"
+        (click)="this.getAllDocenti()" 
+        class="btn btn-secondary" 
+        data-bs-dismiss="modal">ANNULLA</button>
         <button type="button" 
         class="btn btn-primary" 
         (click)="updateDocente(idDocente,docenteForm)"

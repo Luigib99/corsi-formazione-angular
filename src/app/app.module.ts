@@ -12,7 +12,6 @@ import { RouterModule } from '@angular/router';
 import { AddElementComponent } from './admin-tools/add-element/add-element.component';
 import { AddDocenteComponent } from './admin-tools/add-element/add-docente/add-docente.component';
 import { HttpClientModule } from '@angular/common/http';
-import { InfoDocenteComponent } from './docenti/info-docente/info-docente.component';
 import { DeleteElementComponent } from './admin-tools/delete-element/delete-element.component';
 import { UpdateElementComponent } from './admin-tools/update-element/update-element.component';
 import { DeleteDocenteComponent } from './admin-tools/delete-element/delete-docente/delete-docente.component';
@@ -27,16 +26,15 @@ import { UpdateDocenteComponent } from './admin-tools/update-element/update-doce
     HomeComponent,
     AddElementComponent,
     AddDocenteComponent,
-    InfoDocenteComponent,
     DeleteElementComponent,
     UpdateElementComponent,
     DeleteDocenteComponent,
-    UpdateDocenteComponent
+    UpdateDocenteComponent,
+    DocentiComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    DocentiComponent,
     AppRoutingModule,
     RouterModule,
     HttpClientModule

@@ -1,8 +1,41 @@
-<header class="header">
-  LISTA DOCENTI
-</header>
+<!-- TABELLA -->
 <div class="pagina container mt-4">
-  <table class="table">
+  <div class="header">
+    <h1>Elenco dei Docenti</h1>
+  </div>
+
+  <p class="d-inline-flex gap-1">
+    <button class="btn btn-light mt-3" 
+    style=" border:solid 1px black;"
+    data-bs-toggle="collapse" 
+    href="#searchDocenteCollapse" 
+    role="button" 
+    aria-expanded="false" 
+    aria-controls="searchDocenteCollapse">
+      FILTRI DOCENTE
+      <img src="https://www.freeiconspng.com/thumbs/search-icon-png/search-icon-png-21.png"
+      alt="" 
+      style="width:15px; height:15px; margin-left:10px;">
+    </button>
+  </p>
+  
+  <div class="collapse" id="searchDocenteCollapse">
+    <div class="card card-body" style="background-color:#eed3d3; border: 0px;">
+      <div class="row">
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Nome" [(ngModel)]="nome">
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Cognome" [(ngModel)]="cognome">
+        </div>
+        <div class="col">
+          <button class="btn btn-primary" (click)="search()">CERCA</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <table class="table mt-3">
     <thead class="thead-dark prop">
       <tr>
         <th scope="col">NOME</th>
@@ -13,7 +46,97 @@
       <tr *ngFor="let docente of docenti">
         <td>{{ docente.nome }}</td>
         <td>{{ docente.cognome }}</td>
+        <td>
+          <button class="circle-info btn btn-info" 
+          (click)="showInfo(docente)"
+          data-bs-toggle="modal"
+          data-bs-target="#infoDocenteModal">
+            <i class="testo-info">i</i>
+          </button>
+        </td>
       </tr>
     </tbody>
   </table>
+</div>
+
+<!-- MODAL INFO DOCENTE -->
+<div class="modal fade" 
+id="infoDocenteModal" 
+data-bs-backdrop="static" 
+data-bs-keyboard="false" 
+tabindex="-1" 
+aria-labelledby="infoDocenteModalLabel" 
+aria-hidden="true">
+  <div class="modal-info-docente modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-4" id="infoDocenteModalLabel">INFO DOCENTE</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div>
+          <h3 class="testo-docente">ID: {{docenteSelect.id}}</h3>
+          <h3 class="testo-docente">NOME: {{docenteSelect.nome}}</h3>
+          <h3 class="testo-docente">COGNOME: {{docenteSelect.cognome}}</h3>
+          <h3 class="testo-docente">CORSI: {{docenteSelect.listaCorsi}}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL SEARCH DOCENTE -->
+<div class="modal fade" 
+id="searchDocenteModal" 
+data-bs-backdrop="static" 
+data-bs-keyboard="false" 
+tabindex="-1" 
+aria-labelledby="searchDocenteModalLabel" 
+aria-hidden="true">
+  <div class="modal-search-docente modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-4" id="searchDocenteModalLabel">CERCA DOCENTE:</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row mb-3">
+          <div class="col">
+            <h3 class="testo-docente">ID:</h3>
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" placeholder="ID">
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col">
+            <h3 class="testo-docente">NOME:</h3>
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Nome">
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col">
+            <h3 class="testo-docente">COGNOME:</h3>
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Cognome">
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col">
+            <h3 class="testo-docente">CORSI:</h3>
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Corsi">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerca</button>
+      </div>
+    </div>
+  </div>
 </div>
