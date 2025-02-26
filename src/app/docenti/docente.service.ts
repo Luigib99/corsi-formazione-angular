@@ -33,6 +33,6 @@ export class DocenteService {
       if (nome) params = params.append('nome', nome);
       if (cognome) params = params.append('cognome', cognome);
     
-      return this.http.get<DocenteModel[]>('http://localhost:8080/docenti/filterDocente', { params });
+      return this.http.get<DocenteModel[]>('http://localhost:8080/docente/filterDocente', { params });
     }
 }

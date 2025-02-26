@@ -5,25 +5,23 @@
       <a class="navbar-brand" href="#">
         <img src="https://upload.wikimedia.org/wikipedia/it/f/f7/Logo_Universit%C3%A0_di_Urbino.png" 
         alt="Logo" 
-        style="height: 40px;">
+        style="height: 50px;">
       </a>
     </div>
     <!-- HOME -->
     <div class="navbar-header">
-      <a class="navbar-brand text" href="#">HOME</a>
+      <a class="navbar-brand text" routerLink="/home" href="home">HOME</a>
+    </div>
+    <div class="navbar-header">
+      <a class="navbar-brand text" routerLink="/docenti" href="docenti">DOCENTI</a>
+    </div>
+    <div class="navbar-header">
+      <a class="navbar-brand text" routerLink="/discenti" href="discenti">STUDENTI</a>
+    </div>
+    <div class="navbar-header">
+      <a class="navbar-brand text" routerLink="/corsi" href="corsi">CORSI</a>
     </div>
     <ul class="navbar-nav me-auto mb-2-lg-0">
-      <li class="nav-item dropdown">
-        <a class="nav-link text dropdown-toggle" href="#" id="page1Dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          LISTA UTENTI
-        </a>
-        <ul class="dropdown-menu" aria-labelledby="page1Dropdown">
-          <li><a class="nav-link text-dropdown" routerLink="/docenti">DOCENTI</a></li>
-          <li><a class="nav-link text-dropdown" routerLink="/discenti">DISCENTI</a></li>
-          <li><a class="nav-link text-dropdown" routerLink="/corsi">CORSI</a></li>
-        </ul>
-      </li>
-
       <li class="nav-item dropdown">
         <a class="nav-link text dropdown-toggle" href="#" id="page1Dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           STRUMENTI ADMIN
@@ -35,5 +33,11 @@
         </ul>
       </li>
     </ul>
+    <div class="navbar-header">
+      <a class="navbar-brand text" routerLink="/login" href="#">LOGIN 
+        <img src="https://www.citypng.com/public/uploads/small/11639594342hjraqgbufi3xlb66lt30fz1pwfcydxkjqbynfqdpvufz41ysjtngiet4dyrywgqqqqu56w5nozgrhyecs4ixrlllkl150ogbiid1.png" 
+        alt="login-image"
+        style="height:30px; margin-left: 10px; padding-bottom: 5px;"></a>
+    </div>
   </div>
 </nav>

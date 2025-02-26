@@ -1,18 +1,42 @@
-/* Stile per la pagina */
+
+/* Elemento di sfondo */
+.sfondo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://media.istockphoto.com/id/1366724877/it/foto/vista-posteriore-dellinsegnante-maturo-che-parla-con-il-suo-studente-durante-la-lezione-in.jpg?s=612x612&w=0&k=20&c=4y3xDJYS3-d3jZLrQTH0e-HschQW9Tc4KNF3n4_5kbM=');
+  background-size: cover;
+  z-index: -1; 
+  background-position: center;
+  filter:blur(5px);
+  opacity: 70%;
+}
+
 .pagina {
   padding: 20px;
+  margin-bottom:20px ;
+  background-color: #e9ffff;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  margin-top: 80px;
 }
 
 /* il titolo */
 .header {
   text-align: center;
-  padding: 20px;
-  font-size: 2.5rem; /* Usa rem per una dimensione del font più flessibile */
-  font-family: 'Roboto', sans-serif; /* Cambia il font a Roboto */
-  font-weight: bold; /* Rende il font più spesso */
-  color: #ffffff; /* Cambia il colore del testo */
-  background-color: rgb(29, 50, 182); /* Aggiunge uno sfondo chiaro */
-  border-bottom: 2px solid #ddd; /* Aggiunge un bordo inferiore */
+  padding: 10px;
+  font-size: 2.5rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: rgb(18, 16, 126);
+  border: 1px solid #000000;
+}
+
+.modal-search-docente{
+  height: 100px;
+  width: 400px;
 }
 
 /* tabella */
@@ -23,17 +47,17 @@
 
 /* legende e dati */
 .table th, .table td {
-  padding: 12px 15px;
+  padding: 8px 12px;
   text-align: left;
 }
 
-/* legende */
+/* legenda */
 .table th {
-  background-color: rgb(58, 43, 193);
+  background-color: rgb(18, 16, 126);
   color: white;
-  height: 40px;
+  height: 30px;
   font-family: 'Roboto', sans-serif;
-  border: 2px solid #000000;
+  border: 1px solid #000000;
   font-weight: 700;
   font-size: 1.2rem;
   text-transform: uppercase;
@@ -42,17 +66,58 @@
   top: 0;
 }
 
-/* dati */
+/* dato */
 .table td{
   font-family: 'Roboto', sans-serif;
-  font-weight: 200;
-  font-size: 1.2rem;
+  font-weight: 400;
+  font-size: 1 rem;
   letter-spacing: 1px;
-  border: 2px solid #000000;
+  border: 1px solid #000000;
 }
 
-/* id*/
-.id{
-  width: 90px;
-  background-color: rgb(178, 198, 204);
+/* cerchio info */
+.circle-info{
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  font-weight: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+/* testo info */
+.testo-info{
+  font-size: 1rem;
+  font-weight:1000;
+  font-family: 'Roboto', sans-serif;
+  color: #000000;
+}
+
+/* MODAL */
+.modal-info-docente{
+  width:150%;
+}
+
+.modal-header{
+  background-color: rgb(18, 16, 126);
+  color: white;
+}
+
+.legenda-modal{
+  font-size: 20px;
+  font-weight:bold;
+  font-family: 'Roboto', sans-serif;
+  color: #000000;
+  margin: 15px;
+}
+
+.dato-modal{
+  font-size: 20px;
+  font-weight:400;
+  font-family: 'Roboto', sans-serif;
+  color: #000000;
+  margin: 15px;
+  float: right;
+}
+

@@ -12,6 +12,16 @@ import { DiscenteModel } from '../model/discente.model';
 export class DiscentiComponent {
   private discenteService = inject(DiscentiService);
   discenti :DiscenteModel[] = [];
+  nome: string = '';
+  cognome: string = '';
+  discenteSelect:DiscenteModel = {
+    id: 0,
+    nome: '',
+    cognome: '',
+    matricola: '',
+    dataNascita: new Date(),
+    listaCorsi: []
+  };
 
   ngOnInit(): void {
     this.discenteService.getAllDiscenti().subscribe({
@@ -20,4 +30,10 @@ export class DiscentiComponent {
       }
     });
   }
+
+  showInfo(discente: DiscenteModel): void {
+    this.discenteSelect = discente;
+    console.log(this.discenteSelect.listaCorsi);
+  }
+
 }

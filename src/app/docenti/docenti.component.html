@@ -1,12 +1,13 @@
 <!-- TABELLA -->
-<div class="pagina container mt-4">
+<div class="sfondo"></div>
+<div class="pagina container">
   <div class="header">
-    <h1>Elenco dei Docenti</h1>
+    <h1>I NOSTRI DOCENTI</h1>
   </div>
-
+  <!-- PULSANTE FILTRI DOCENTE -->
   <p class="d-inline-flex gap-1">
-    <button class="btn btn-light mt-3" 
-    style=" border:solid 1px black;"
+    <button class="btn mt-3" 
+    style=" border:solid 0.5px black;  background-color: white;"
     data-bs-toggle="collapse" 
     href="#searchDocenteCollapse" 
     role="button" 
@@ -18,15 +19,15 @@
       style="width:15px; height:15px; margin-left:10px;">
     </button>
   </p>
-  
+  <!-- FORM FILTRI DOCENTE -->
   <div class="collapse" id="searchDocenteCollapse">
-    <div class="card card-body" style="background-color:#eed3d3; border: 0px;">
+    <div class="card card-body" style="background-color:#e9ffff; border: 0px;">
       <div class="row">
         <div class="col">
-          <input type="text" class="form-control" placeholder="Nome" [(ngModel)]="nome">
+          <input type="text" style="border: 0.5px solid black;" class="form-control" placeholder="Nome" [(ngModel)]="nome">
         </div>
         <div class="col">
-          <input type="text" class="form-control" placeholder="Cognome" [(ngModel)]="cognome">
+          <input type="text" style="border: 0.5px solid black;" class="form-control" placeholder="Cognome" [(ngModel)]="cognome">
         </div>
         <div class="col">
           <button class="btn btn-primary" (click)="search()">CERCA</button>
@@ -34,7 +35,7 @@
       </div>
     </div>
   </div>
-
+  <!-- TABELLA DOCENTI -->
   <table class="table mt-3">
     <thead class="thead-dark prop">
       <tr>
@@ -67,75 +68,35 @@ data-bs-keyboard="false"
 tabindex="-1" 
 aria-labelledby="infoDocenteModalLabel" 
 aria-hidden="true">
-  <div class="modal-info-docente modal-dialog">
-    <div class="modal-content">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content modal-info-docente">
       <div class="modal-header">
-        <h1 class="modal-title fs-4" id="infoDocenteModalLabel">INFO DOCENTE</h1>
+        <h1 class="modal-title fs-4" id="infoDocenteModalLabel">{{docenteSelect.nome}} {{docenteSelect.cognome}}</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <div>
-          <h3 class="testo-docente">ID: {{docenteSelect.id}}</h3>
-          <h3 class="testo-docente">NOME: {{docenteSelect.nome}}</h3>
-          <h3 class="testo-docente">COGNOME: {{docenteSelect.cognome}}</h3>
-          <h3 class="testo-docente">CORSI: {{docenteSelect.listaCorsi}}</h3>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- MODAL SEARCH DOCENTE -->
-<div class="modal fade" 
-id="searchDocenteModal" 
-data-bs-backdrop="static" 
-data-bs-keyboard="false" 
-tabindex="-1" 
-aria-labelledby="searchDocenteModalLabel" 
-aria-hidden="true">
-  <div class="modal-search-docente modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-4" id="searchDocenteModalLabel">CERCA DOCENTE:</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="row mb-3">
-          <div class="col">
-            <h3 class="testo-docente">ID:</h3>
+          <div class="d-flex justify-content-between">
+            <span class="legenda-modal">Nome:</span>
+            <span class="dato-modal">{{ docenteSelect.nome }}</span>
           </div>
-          <div class="col">
-            <input type="text" class="form-control" placeholder="ID">
+          <div class="d-flex justify-content-between">
+            <span class="legenda-modal">Cognome:</span>
+            <span class="dato-modal">{{ docenteSelect.cognome }}</span>
+          </div>
+          <div class="d-flex justify-content-between">
+            <span class="legenda-modal">Corsi:</span>
+            <span class="dato-modal" *ngIf="docenteSelect.listaCorsi?.length === 0">nessun corso</span>
+            <span class="dato-modal" *ngIf="docenteSelect.listaCorsi.length > 0">
+              <ng-container *ngFor="let corso of docenteSelect.listaCorsi">{{ corso }}, </ng-container>
+            </span>
           </div>
         </div>
-        <div class="row mb-3">
-          <div class="col">
-            <h3 class="testo-docente">NOME:</h3>
-          </div>
-          <div class="col">
-            <input type="text" class="form-control" placeholder="Nome">
-          </div>
+        <div class="modal-footer">
+          <button type="button" 
+          class="btn btn-primary mt-3" 
+          data-bs-dismiss="modal">INDIETRO</button>
         </div>
-        <div class="row mb-3">
-          <div class="col">
-            <h3 class="testo-docente">COGNOME:</h3>
-          </div>
-          <div class="col">
-            <input type="text" class="form-control" placeholder="Cognome">
-          </div>
-        </div>
-        <div class="row mb-3">
-          <div class="col">
-            <h3 class="testo-docente">CORSI:</h3>
-          </div>
-          <div class="col">
-            <input type="text" class="form-control" placeholder="Corsi">
-          </div>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerca</button>
       </div>
     </div>
   </div>

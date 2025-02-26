@@ -1,18 +1,56 @@
-.container {
-  max-width: 1200px;
+/* Elemento di sfondo */
+.sfondo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://www.cybertrends.it/wp-content/uploads/2023/09/universita-urbino-2017.jpg');
+  background-size: cover;
+  z-index: -1; 
+  background: linear-gradient(to right, 
+  rgba(255, 255, 255, 1) 40%,
+  rgba(255, 255, 255, 0.8) 50%,
+  rgba(255, 255, 255, 0) 70%),
+  url('https://www.cybertrends.it/wp-content/uploads/2023/09/universita-urbino-2017.jpg');
+  background-size: cover;
+  background-position: center;
 }
 
-.jumbotron {
-  background-color: #f8f9fa;
-  padding: 2rem 1rem;
-  border-radius: 0.3rem;
+/* Contenuto della pagina */
+.contenuto {
+  position: relative;
+  z-index: 1;
+  width: 500px;
+  padding-left: 50px;
 }
 
-.card {
-  margin-bottom: 20px;
+.testo-superiore {
+  font-size: 40px;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  text-align: left;
+  margin-top: 100px;
+  margin-bottom: 30px;
+  font-family: 'Roboto', sans-serif;
 }
 
-.card-img-top {
-  height: 200px;
-  object-fit: cover;
+.testo-inferiore{
+  font-size: 15px;
+  color: rgb(0, 0, 0);
+  text-align: left;
+  margin-top: 20px;
+  font-weight: normal;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+}
+
+.accedi-button{
+  position: relative;
+  margin-top: 40px;
+  width: 150px;
+  background-color: #2a8787;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
 }

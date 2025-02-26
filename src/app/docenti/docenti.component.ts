@@ -11,10 +11,14 @@ import { DocenteModel } from '../model/docente.model';
 export class DocentiComponent implements OnInit {
   docenti: DocenteModel[] = [];
   idDocente: number = 0;
-  docenteSelect:DocenteModel = {} as DocenteModel;
   nome: string = '';
   cognome: string = '';
-  corso: string = '';
+  docenteSelect:DocenteModel = {
+    id: 0,
+    nome: '',
+    cognome: '',
+    listaCorsi: []
+  };
 
   constructor(private docenteService: DocenteService) {}
 
